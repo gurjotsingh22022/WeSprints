@@ -1,6 +1,6 @@
 # WeSprints
 
-![WeSprints Banner](https://raw.githubusercontent.com/yourusername/yourrepo/main/demo/landingPage.jpg)
+![WeSprints Banner](https://raw.githubusercontent.com/gurjotsingh22022/WeSprints/refs/heads/main/demo/landingPage.png)
 
 **WeSprints** is a modern, web-based Agile team sprint management tool. Built to streamline team collaboration, project management, and sprint planning, WeSprints is designed to boost your productivity while keeping your workflow simple and effective.
 
@@ -20,7 +20,7 @@
 _A dynamic and intuitive Kanban board to track your sprint progress._
 
 ### Team Management
-![Team Management](https://raw.githubusercontent.com/yourusername/yourrepo/main/demo/Team.jpg)
+![Team Management](https://raw.githubusercontent.com/gurjotsingh22022/WeSprints/refs/heads/main/demo/KunBun.png)
 _Easily manage team members and roles._
 
 
