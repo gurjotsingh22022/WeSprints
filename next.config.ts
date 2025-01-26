@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+const nextConfig: NextConfig ={
+  images: {
+    domains: ['img.clerk.com'], // Add 'img.clerk.com' to the list of allowed domains
+  },
+}
 
 export default nextConfig;

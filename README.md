@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# weSprints
 
-## Getting Started
+![weSprints Banner](https://via.placeholder.com/800x200.png?text=weSprints+Agile+Team+Management)
 
-First, run the development server:
+**weSprints** is a modern, web-based Agile team sprint management tool. Built to streamline team collaboration, project management, and sprint planning, weSprints is designed to boost your productivity while keeping your workflow simple and effective.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Kanban Board**: Visualize and manage your tasks effortlessly.
+- **Team Management**: Organize your team, assign roles, and ensure seamless communication.
+- **Online Meetings**: Schedule and manage team meetings with ease.
+- **Project Management**: Keep track of your projects and monitor progress.
+- **Organization Creation**: Build organizations and manage multiple teams.
+- **User Invitations**: Invite members and collaborate effectively.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌟 Screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Kanban Board
+![Kanban Board](https://via.placeholder.com/600x300.png?text=Kanban+Board)
+_A dynamic and intuitive Kanban board to track your sprint progress._
 
-## Learn More
+### Team Management
+![Team Management](https://via.placeholder.com/600x300.png?text=Team+Management)
+_Easily manage team members and roles._
 
-To learn more about Next.js, take a look at the following resources:
+### Meeting Scheduler
+![Meeting Scheduler](https://via.placeholder.com/600x300.png?text=Meeting+Scheduler)
+_Schedule online meetings directly from the app._
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+weSprints is built using the latest technologies to ensure scalability, performance, and ease of use:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend**: [Next.js](https://nextjs.org/), [React.js](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/), [ShadCN UI](https://shadcn.dev/)
+- **Backend**: [Node.js](https://nodejs.org/), [Prisma](https://www.prisma.io/), [PostgreSQL](https://www.postgresql.org/)
+- **Authentication**: [Clerk](https://clerk.dev/), OAuth integration
+- **Validation**: [Zod](https://zod.dev/)
+- **Drag-and-Drop**: [@hello-pangea/dnd](https://hello-pangea.github.io/dnd/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)

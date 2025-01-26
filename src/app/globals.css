@@ -2,20 +2,408 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+/* home page */
+
+.background-base {
+  min-height: 1400px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+
+.grid-bg {
+  background: url('/assets/background/grid-bg.svg') no-repeat;
+}
+
+.grain-background {
+  background: url('/assets/background/grain-bg.svg') repeat;
+}
+
+.grain-blur {
+  top: -220px;
+  background: url('/assets/background/grain-blur.svg') no-repeat 50%;
+}
+
+.large-blur {
+  left: -30px;
+  top: -864px;
+  border-radius: 750px;
+  opacity: 0.2;
+  background: radial-gradient(
+    70.71% 70.71% at 50% 50%,
+    rgba(117, 173, 255, 0.2) 0%,
+    rgba(117, 173, 255, 0) 70%,
+    rgba(117, 173, 255, 0) 100%
+  );
+}
+
+.small-blur {
+  background: url('/assets/background/small-blur.svg') no-repeat 50%;
+}
+
+.featured-card-badge {
+  position: relative;
+  background: linear-gradient(90deg, #fff800 0%, #fffecc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.featured-card-badge::before {
+  content: '';
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 15%,
+    rgba(255, 248, 0, 0.6) 50%,
+    rgba(255, 255, 255, 0) 85%
+  );
+  position: absolute;
+  left: 8px;
+  top: -1px;
+  width: 48px;
+  height: 1px;
+}
+.pricing-card-border {
+  position: relative;
+}
+.pricing-card-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px 16px 0 0;
+  padding: 1px 1px 0;
+  background: linear-gradient(180deg, #414b4e 49.5%, rgba(65, 75, 78, 0) 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.footer-border {
+  position: relative;
+  background: linear-gradient(90deg, rgba(65, 75, 78, 0) 0%, #414b4e 49.5%, rgba(65, 75, 78, 0) 100%);
+}
+.footer-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 124px);
+  width: 248px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 15%,
+    rgba(255, 248, 0, 0.6) 50%,
+    rgba(255, 255, 255, 0) 85%
+  );
+}
+
+.featured-price-title {
+  position: relative;
+}
+.featured-price-title::before {
+  content: '';
+  position: absolute;
+  left: 44px;
+  top: -7px;
+  height: 17px;
+  width: 296px;
+  border-radius: 296px;
+  opacity: 0.2;
+  background: #fddd35;
+  filter: blur(32px);
+}
+
+.featured-price-title::after {
+  content: '';
+  width: 196px;
+  height: 4px;
+  position: absolute;
+  left: 94px;
+  top: -2px;
+  border-radius: 196px;
+  opacity: 0.5;
+  background: #4d94ff;
+  filter: blur(12px);
+}
+
+.featured-hard-blur-bg {
+  width: 88px;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+  margin-left: -44px;
+  top: -2px;
+  background: #fff800;
+  opacity: 0.5;
+  filter: blur(12px);
+}
+
+.featured-yellow-highlight-bg {
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: -124px;
+  width: 248px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 15%,
+    rgba(255, 248, 0, 0.6) 50%,
+    rgba(255, 255, 255, 0) 85%
+  );
+}
+.featured-vertical-hard-blur-bg {
+  position: absolute;
+  top: -140px;
+  left: 50%;
+  margin-left: -64px;
+  width: 128px;
+  height: 280px;
+  border-radius: 280px;
+  opacity: 0.1;
+  background: #fff800;
+  filter: blur(48px);
+}
+
+.featured-soft-blur-bg {
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  margin-left: -192px;
+  width: 384px;
+  height: 37px;
+  border-radius: 384px;
+  opacity: 0.3;
+  background: coral;
+  filter: blur(32px);
+}
+
+/* home page */
+
+.loader-line-global {
+  width: 100%;
+  height: 5px;
+  overflow: hidden;
+  background-color: #ddd;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.loader-line {
+  width: 100%;
+  height: 5px;
+  position: relative;
+  overflow: hidden;
+  background-color: #ddd;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.loader-line:before,
+.loader-line-global:before {
+  content: "";
+  position: absolute;
+  left: -50%;
+  height: 5px;
+  width: 40%;
+  background-color: rgb(255, 68, 0);
+  -webkit-animation: lineAnim 1s linear infinite;
+  -moz-animation: lineAnim 1s linear infinite;
+  animation: lineAnim 1s linear infinite;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+@keyframes lineAnim {
+  0% {
+      left: -40%;
+  }
+  50% {
+      left: 20%;
+      width: 80%;
+  }
+  100% {
+      left: 100%;
+      width: 100%;
+  }
+}
+
+
+.wmde-markdown ul {
+  list-style-type: disc;
+  padding-left: 15px !important;
+  color: white;
+}
+
+.sticky-header
+{
+ backdrop-filter: saturate(180%) blur(8px);
+ border-bottom: 1px solid #1c1b1b;
+}
+
+.tabs-ul li
+{
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+
+.tabs-ul button
+{
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 1em;
+  position: relative;
+}
+
+.tabs-ul li.active
+{
+  color: red;
+  font-weight: 400;
+}
+
+
+.tabs-ul .data-\[state\=active\]\:bg-background[data-state="active"] {
+  background-color: transparent!important;
+  font-weight: 400;
+}
+
+.tabs-ul .data-\[state\=active\]\:bg-background[data-state="active"]::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: red;
+}
+
+.tabs-ul li.active::after
+{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: red;
+}
+
+.animate-filter-tab
+{
+  animation: filter-anime .2s linear;
+}
+
+
+@keyframes filter-anime {
+  0% {
+      opacity: 0;
+      height: 0px;
+  }
+  60% {
+    opacity: 0;
+    height: 40px;
+  }
+  100% {
+    opacity: 1;
+    height: 40px;
+  }
 }
