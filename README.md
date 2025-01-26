@@ -31,7 +31,7 @@ WeSprints is built using the latest technologies to ensure scalability, performa
 _A dynamic and intuitive Kanban board to track your sprint progress._
 
 ### Team Management
-![Team Management](https://raw.githubusercontent.com/gurjotsingh22022/WeSprints/refs/heads/main/demo/KunBun.png)
+![Team Management](https://raw.githubusercontent.com/gurjotsingh22022/WeSprints/refs/heads/main/demo/Team.png)
 _Easily manage team members and roles._
 
 
